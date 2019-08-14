@@ -16,7 +16,7 @@
  *
  * For more information, please refer to <http://unlicense.org>
  */
-package com.geezertechnet.ampsim;
+package com.geezertechnet.ampsim.wav;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

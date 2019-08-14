@@ -16,7 +16,7 @@
  *
  * For more information, please refer to <http://unlicense.org>
  */
-package com.geezertechnet.ampsim;
+package com.geezertechnet.ampsim.wav;
 
 /**
  * Generic bean to encapsulate chunks that are not of type fmt or data.

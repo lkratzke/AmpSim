@@ -16,7 +16,7 @@
  *
  * For more information, please refer to <http://unlicense.org>
  */
-package com.geezertechnet.ampsim;
+package com.geezertechnet.ampsim.wav;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -85,6 +85,12 @@ public class WaveData {
             in.read(fmtByteRate);
             in.read(fmtBlockAlign);
             in.read(fmtBitsPerSample);
+            // found that fmtChunkSize can be more than 16 bytes (18) even though there is only 16 bytes of data to read.
+            int crapSpacerBytes = size[0] - 16;
+            if (crapSpacerBytes > 0) {
+              byte[] crapSpacerByteArray = new byte[crapSpacerBytes];
+              in.read(crapSpacerByteArray);
+            }
             break;
           case "data":
             dataChunkId = id;
